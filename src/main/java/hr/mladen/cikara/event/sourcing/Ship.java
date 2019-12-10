@@ -1,5 +1,9 @@
 package hr.mladen.cikara.event.sourcing;
 
+import hr.mladen.cikara.event.sourcing.events.ArrivalEvent;
+import hr.mladen.cikara.event.sourcing.events.DepartureEvent;
+import hr.mladen.cikara.event.sourcing.events.LoadEvent;
+import hr.mladen.cikara.event.sourcing.events.UnloadEvent;
 import java.util.ArrayList;
 
 import lombok.Getter;
@@ -16,21 +20,21 @@ public class Ship {
     this.cargo = new ArrayList<>();
   }
 
-  void handleDeparture(final DepartureEvent departureEvent) {
+  public void handleDeparture(final DepartureEvent departureEvent) {
     port = Port.AT_SEA;
   }
 
-  void handleArrival(final ArrivalEvent arrivalEvent) {
+  public void handleArrival(final ArrivalEvent arrivalEvent) {
     port = arrivalEvent.getPort();
 
     cargo.forEach(c -> c.handleArrival(arrivalEvent));
   }
 
-  void handleLoad(final LoadEvent loadEvent) {
+  public void handleLoad(final LoadEvent loadEvent) {
     cargo.add(loadEvent.getCargo());
   }
 
-  void handleUnload(final UnloadEvent unloadEvent) {
+  public void handleUnload(final UnloadEvent unloadEvent) {
     cargo.remove(unloadEvent.getCargo());
   }
 }

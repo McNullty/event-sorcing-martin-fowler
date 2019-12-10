@@ -1,4 +1,4 @@
-package hr.mladen.cikara.event.sourcing;
+package hr.mladen.cikara.event.sourcing.events;
 
 import java.time.LocalDate;
 

@@ -1,5 +1,7 @@
 package hr.mladen.cikara.event.sourcing;
 
+import hr.mladen.cikara.event.sourcing.events.ArrivalEvent;
+
 import lombok.Getter;
 
 @Getter

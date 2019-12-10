@@ -1,5 +1,6 @@
 package hr.mladen.cikara.event.sourcing;
 
+import hr.mladen.cikara.event.sourcing.events.DomainEvent;
 import java.util.ArrayList;
 import java.util.List;
 

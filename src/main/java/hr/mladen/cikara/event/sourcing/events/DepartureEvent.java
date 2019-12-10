@@ -1,5 +1,7 @@
-package hr.mladen.cikara.event.sourcing;
+package hr.mladen.cikara.event.sourcing.events;
 
+import hr.mladen.cikara.event.sourcing.Port;
+import hr.mladen.cikara.event.sourcing.Ship;
 import java.time.LocalDate;
 
 import lombok.EqualsAndHashCode;
